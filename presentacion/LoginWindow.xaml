@@ -1,0 +1,218 @@
+﻿<Window x:Class="presentacion.LoginWindows"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:presentacion"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    mc:Ignorable="d"
+    WindowStartupLocation="CenterScreen"
+    Style="{StaticResource Window}"
+    Title="" Height="640" Width="860"
+    ResizeMode="CanMinimize" 
+    WindowStyle="ToolWindow" 
+    FontFamily="Segoe UI Emoji">
+
+    <!-- http://materialdesignicons.com/-->    
+
+    <Grid>
+        <!--GRID LOGIN-->
+        <Grid x:Name="gbLogin">
+            <Rectangle Height="300" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF2281D1"/>
+                        <GradientStop Color="#FF34268A" Offset="1"/>
+                        <GradientStop Color="#FF33288B" Offset="0.546"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Rectangle Width="400" Height="300" VerticalAlignment="Bottom" Margin="0,80" RadiusY="10" RadiusX="10" Fill="White">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+                <Image Source="logotipo.png" Height="300"/>
+            </StackPanel>
+
+            <Grid VerticalAlignment="Bottom" Margin="20,80" Height="300">
+                <Label Content="Acceso Proveedores" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
+                <StackPanel VerticalAlignment="Center" Margin="15">
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray"  VerticalAlignment="Center" Kind="Account" Height="30" Width="30" />
+                        <TextBox x:Name="tbUsuario" Margin="10" VerticalAlignment="Center" Width="300" materialDesign:HintAssist.Hint="Cuenta de email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Lock" Height="30" Width="30" />
+                        <PasswordBox x:Name="pbContrasenya" Margin="10" Width="300" materialDesign:HintAssist.Hint="Contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <CheckBox x:Name="cbRecordarCredenciales" Width="270" Content="Recordar credenciales de acceso" Margin="10"></CheckBox>
+                        <Button x:Name="bRecuperaPass" Content="¿Has olvidado la contraseña?" Width="270" Margin="10" BorderThickness="0" Background="Transparent" Foreground="Gray" Cursor="Hand"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            
+            <StackPanel Orientation="Horizontal" Margin="0,65" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Button x:Name="bAcceder" Width="150" >
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="CheckCircle" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Acceder" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="bRegistrarse" Width="150" Margin="10,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Register" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Registrarse" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!--GRID REGISTRO-->
+        <Grid x:Name="gbRegistro" Visibility="Hidden">
+            <Rectangle Height="300" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF2281D1"/>
+                        <GradientStop Color="#FF34268A" Offset="1"/>
+                        <GradientStop Color="#FF33288B" Offset="0.546"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Rectangle Width="500" Height="425" VerticalAlignment="Bottom" Margin="0,80" RadiusY="10" RadiusX="10" Fill="White">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30">
+                <materialDesign:PackIcon Kind="HeartCircle" Width="50" Height="50" Foreground="White"/>
+                <TextBlock Margin="10,0,0,0" Foreground="White" FontSize="15" Text="Wedding Planning" VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+
+            <Grid VerticalAlignment="Bottom" Margin="20,80" Height="425">
+                <Label Content="Registro Proveedores" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
+                <StackPanel VerticalAlignment="Center" Margin="15">
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray"  VerticalAlignment="Center" Kind="ContactMail" Height="30" Width="30" />
+                        <TextBox x:Name="tbUsuarioRegistro" Margin="10" VerticalAlignment="Center" Width="410" materialDesign:HintAssist.Hint="Cuenta de email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Lock" Height="30" Width="30" />
+                        <PasswordBox x:Name="pbContrasenyaRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="Contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Lock" Height="30" Width="30" />
+                        <PasswordBox x:Name="pbContrasenyaRepiteRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="Confirmar contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Person" Height="30" Width="30" />
+                        <TextBox x:Name="tbNombreRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="Nombre o razón social" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="IdentificationCard" Height="30" Width="30" />
+                        <TextBox x:Name="tbDNIRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="DNI/CIF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Directions" Height="30" Width="30" />
+                        <TextBox x:Name="tbDireccionRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="Dirección" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="City" Height="30" Width="30" />
+                        <ComboBox x:Name="cbProvinciaRegistro" Width="180" Text="Seleccione una provincia" Style="{StaticResource ComboBox}"></ComboBox>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="City" Height="30" Width="30" />
+                        <TextBox x:Name="tbPoblacionRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="Población" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="LocalPostOffice" Height="30" Width="30" />
+                        <TextBox x:Name="tbCPRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="Código Postal" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Telephone" Height="30" Width="30" />
+                        <TextBox x:Name="tbTelefonoRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="Teléfono" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Telephone" Height="30" Width="30" />
+                        <TextBox x:Name="tbMovilRegistro" Margin="10" Width="180" materialDesign:HintAssist.Hint="Móvil" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Margin="0,65" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Button x:Name="bRealizarRegistro" Width="150" >
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="CheckCircle" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Registrar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="bCancelarRegistro" Width="150" Margin="10,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Cancel" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Cancelar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!--GRID CAMBIAR PASSWORD-->
+        <Grid x:Name="gbRecuperarPassword" Visibility="Hidden">
+            <Rectangle Height="300" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF2281D1"/>
+                        <GradientStop Color="#FF34268A" Offset="1"/>
+                        <GradientStop Color="#FF33288B" Offset="0.546"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Rectangle Width="400" Height="325" VerticalAlignment="Bottom" Margin="0,80" RadiusY="10" RadiusX="10" Fill="White">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30">
+                <materialDesign:PackIcon Kind="HeartCircle" Width="120" Height="120" Foreground="White"/>
+                <TextBlock Margin="10,0,0,0" Foreground="White" FontSize="30" Text="Wedding Planning" VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+            
+            <Grid VerticalAlignment="Bottom" Margin="20,80" Height="325">
+                <Label Content="Recuperación de contraseña" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
+                <StackPanel VerticalAlignment="Center" Margin="15">
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray"  VerticalAlignment="Center" Kind="Account" Height="30" Width="30" />
+                        <TextBox x:Name="tbUsuarioRecuperar" Margin="10" VerticalAlignment="Center" Width="300" materialDesign:HintAssist.Hint="Cuenta de email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray"  VerticalAlignment="Center" Kind="Account" Height="30" Width="30" />
+                        <TextBox x:Name="tbNifRecuperar" Margin="10" VerticalAlignment="Center" Width="300" materialDesign:HintAssist.Hint="NIF/CIF" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Lock" Height="30" Width="30" />
+                        <PasswordBox x:Name="pbContrasenyaRecuperar" Margin="10" Width="300" materialDesign:HintAssist.Hint="Nueva contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Lock" Height="30" Width="30" />
+                        <PasswordBox x:Name="pbContrasenyaConfirmarRecuperar" Margin="10" Width="300" materialDesign:HintAssist.Hint="Repita nueva contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Margin="0,65" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Button x:Name="bCambiarPassword" Width="150" >
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="CheckCircle" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Aceptar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="bCancelarRecPassword" Width="150" Margin="10,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Cancel" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Cancelar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+
+        <StackPanel VerticalAlignment="Bottom">
+            <Separator></Separator>
+            <Label HorizontalAlignment="Center" Content="Copyright © 2019 Proyecto DAM IES San Vicente"></Label>
+        </StackPanel>
+    </Grid>
+</Window>

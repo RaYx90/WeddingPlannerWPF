@@ -1,0 +1,79 @@
+﻿<Page x:Class="presentacion.PageEditarPresupuesto"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:presentacion"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      Background="#FFDEDEDE"
+      Title="PageEditarPresupuesto">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--CABECERA-->
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" IsEnabled="False">
+            <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Account" Height="30" Width="30" />
+            <TextBox Margin="2" MinWidth="200" IsEnabled="False" x:Name="tbCliente" FontSize="18"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" IsEnabled="False">
+            <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="AddressMarker" Height="30" Width="30" />
+            <TextBox Margin="2" x:Name="tbDireccion" materialDesign:HintAssist.Hint="Dirección" MinWidth="200" FontSize="18"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+            <materialDesign:PackIcon Foreground="Gray" VerticalAlignment="Center" Kind="Percent" Height="30" Width="30" />
+            <ComboBox x:Name="cbTipoIVA" MinWidth="200" FontSize="18" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" >
+            <DatePicker x:Name="dpFecha" Margin="2,0,0,-3" MinWidth="230" HorizontalAlignment="Center" FontSize="18"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+            <CheckBox x:Name="cbAceptado" Content="Aceptado" MinWidth="230" Margin="2" HorizontalAlignment="Center" FontSize="18"/>
+        </StackPanel>
+
+        <!--TABLA-->
+        <ScrollViewer Grid.Row="2" Grid.ColumnSpan="4" Margin="0,50">
+            <DataGrid x:Name="dgPresupuestosLineas" MinColumnWidth="100" CanUserAddRows="True" Background="Transparent" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="columnDescripcion" Header="Descripción" MinWidth="500" Binding="{Binding Descripcion}"></DataGridTextColumn>
+                    <DataGridTextColumn x:Name="columnCantidad" Header="Cantidad" Binding="{Binding Cantidad}" ></DataGridTextColumn>
+                    <DataGridTextColumn x:Name="columnImporteBruto" Header="Precio" Binding="{Binding ImporteBruto}" ></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+
+
+        <!--BOTONES-->
+        <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+            <Button x:Name="bAcceptar" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="CheckCircle" Width="25" Height="25" VerticalAlignment="Center"/>
+                    <TextBlock Text="Aceptar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="bCancelar" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Cancel" Width="25" Height="25" VerticalAlignment="Center"/>
+                    <TextBlock Text="Cancelar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
