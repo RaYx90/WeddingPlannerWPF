@@ -3,4 +3,4 @@ de negocio que se encarga de comunicar a ambas, para mover los datos utilizaremo
 
 Esta aplicación se comunicaba con una API realizada en SprintBoot mediante heroku, la cúal actualmente no esta activa pero servía para enviar y recibir mensajes.
 
-Por otro lado se incluye la base de datos para poder arrancar la base de datos.
+Por otro lado se incluye la base de datos para poder arrancar la aplicación.
